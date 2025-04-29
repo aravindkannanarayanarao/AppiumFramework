@@ -1,12 +1,15 @@
 using System.Collections.Immutable;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Xml.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Interactions;
 using Syncfusion.UITestHelpers.Core;
 using Syncfusion.UITestHelpers.NUnit;
+using OpenQA.Selenium.Appium.MultiTouch;
 
 namespace Syncfusion.UITestHelpers.Appium
 {
@@ -420,7 +423,26 @@ namespace Syncfusion.UITestHelpers.Appium
         /// <param name="accessibilityId">The accessibility ID of the ComboBox container.</param>
         /// <param name="valueToSelect">The visible text of the item to select from the dropdown list.</param>
 
-        public static void SelectFromComboBox(this IApp app, string accessibilityId, string valueToSelect)
+        public static void SelectFromComboBox(this IApp app, string accessibilityId, float x,float y)
+        {
+            try
+            {
+                var driver = (app as AppiumApp)?.Driver;
+                var comboContainer = driver.FindElement(MobileBy.AccessibilityId(accessibilityId));
+
+                // Tap the dropdown button (usually a sibling of EditText)
+                var dropdownButton = comboContainer.FindElement(By.XPath(".//*[contains(@content-desc, 'Drop down')]"));
+                dropdownButton.Click();
+                Thread.Sleep(2000);
+                app.TapCoordinates(x, y);
+
+            }
+            catch (Exception ex)
+            {
+                LogException("EnterText", ex);
+                throw;
+            }
+        } public static void SelectFromComboBox(this IApp app, string accessibilityId)
         {
             try
             {
@@ -431,10 +453,33 @@ namespace Syncfusion.UITestHelpers.Appium
                 var dropdownButton = comboContainer.FindElement(By.XPath(".//*[contains(@content-desc, 'Drop down')]"));
                 dropdownButton.Click();
 
-                // Wait for list to appear and select the value
-                var listItem = driver.FindElement(MobileBy.AndroidUIAutomator(
-                    $"new UiSelector().text(\"{valueToSelect}\")"));
-                listItem.Click();
+            }
+            catch (Exception ex)
+            {
+                LogException("EnterText", ex);
+                throw;
+            }
+        }
+        /// <summary>
+        /// Selects a specified item from a ComboBox control by first tapping the dropdown button
+        /// and then choosing the desired value from the displayed list.
+        /// </summary>
+        /// <param name="accessibilityId">The accessibility ID of the ComboBox container.</param>
+        /// <param name="valueToSelect">The visible text of the item to select from the dropdown list.</param>
+
+        public static void SelectFromComboBox(this IApp app, string accessibilityId,string SearchValue, float x,float y)
+        {
+            try
+            {
+                var driver = (app as AppiumApp)?.Driver;
+                var comboContainer = driver.FindElement(MobileBy.AccessibilityId(accessibilityId));
+
+                // Tap the dropdown button (usually a sibling of EditText)
+                var input = comboContainer.FindElement(By.ClassName("android.widget.EditText"));
+                input.Click();
+                input.SendKeys(SearchValue);
+                app.TapCoordinates(x, y);
+
             }
             catch (Exception ex)
             {
@@ -449,19 +494,18 @@ namespace Syncfusion.UITestHelpers.Appium
         /// <param name="accessibilityId">The accessibility ID of the AutoComplete input field.</param>
         /// <param name="valueToType">The partial or full text to type into the input field to trigger suggestions.</param>
         /// <param name="valueToSelect">The visible text of the suggestion to select from the dropdown list.</param>
-        public static void SelectFromAutoComplete(this IApp app, string accessibilityId, string valueToType, string valueToSelect)
+        public static void SelectFromAutoComplete(this IApp app, string accessibilityId, string valueToType, float x, float y)
         {
             try
             {
                 var driver = (app as AppiumApp)?.Driver;
                 var input = driver.FindElement(MobileBy.AccessibilityId(accessibilityId));
-                input.Clear();
-                input.SendKeys(valueToType);
+                var inputview = input.FindElement(By.ClassName("android.widget.EditText"));
+                inputview.Clear();
+                inputview.SendKeys(valueToType);
 
                 // Wait for suggestion dropdown and tap the correct item
-                var suggestion = driver.FindElement(MobileBy.AndroidUIAutomator(
-                    $"new UiSelector().text(\"{valueToSelect}\")"));
-                suggestion.Click();
+                app.TapCoordinates(x, y);
             }
             catch (Exception ex)
             {
@@ -3899,5 +3943,70 @@ namespace Syncfusion.UITestHelpers.Appium
                 throw;
             }
         }
+        private static List<CustomPoint> points = new List<CustomPoint>();
+        public static void TapByPointer(this IApp app, string pointerName)
+        {
+            try
+            {
+
+                var point = GetPointByName(pointerName);
+                if (point == null)
+                {
+                    throw new Exception($"Point '{pointerName}' not found.");
+                }
+                else
+                {
+                    app.TapCoordinates(point.X, point.Y);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                LogException("TapByPointer", ex);
+                throw;
+            }
+        }
+        public static void AddPoint(this IApp app, string name, float x, float y)
+        {
+            var point = new CustomPoint(name, x, y);
+            points.Add(point);
+            Console.WriteLine($"Added: {point}");
+        }
+
+        public static List<CustomPoint> GetAllPoints(this IApp app)
+        {
+            return points;
+        }
+
+        public static void PrintAllPoints(this IApp app)
+        {
+            foreach (var point in points)
+            {
+                Console.WriteLine(point);
+            }
+        }
+        public static CustomPoint GetPointByName(string name)
+        {
+            return points.FirstOrDefault(p => p.Name == name);
+        }
+    }
+    public class CustomPoint
+    {
+        public string Name { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+
+        public CustomPoint(string name, float x, float y)
+        {
+            Name = name;
+            X = x;
+            Y = y;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}: ({X}, {Y})";
+        }
+
     }
 }

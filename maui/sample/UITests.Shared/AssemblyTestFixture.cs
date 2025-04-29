@@ -1,5 +1,7 @@
+using OpenQA.Selenium.Interactions;
 using Syncfusion.UITestHelpers.Appium;
 using Syncfusion.UITestHelpers.Core;
+using UITests.Shared;
 
 // SetupFixture runs once for all tests under the same namespace, if placed outside the namespace it will run once for all tests in the assembly
 public class AssemblySetupFixture : UITestContextSetupFixture

@@ -18,6 +18,7 @@
                         DisplayMemberPath = "Name"
                         TextMemberPath = "Name"
                            HeightRequest="50"
+                           SelectedIndex="3"
                            ItemsSource="{Binding SocialMedias}"/>
     </StackLayout>
 </ContentPage>

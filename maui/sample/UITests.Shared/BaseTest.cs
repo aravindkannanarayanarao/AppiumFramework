@@ -26,6 +26,7 @@ public abstract class BaseTest : UITestBase
 {
     public BaseTest(TestDevice testDevice) : base(testDevice)
     {
+
     }
 
     public override IConfig GetTestConfig()
@@ -56,22 +57,22 @@ public abstract class BaseTest : UITestBase
 
         //config.SetProperty(appIdentifierKey, appIdentifier);
 
-       if (_testDevice == TestDevice.Mac)
+        if (_testDevice == TestDevice.Mac)
         {
             var Macappname = "MacApp";
             var MacappnameID = "Synacfusioncontrols";
             config.SetProperty(Macappname, MacappnameID);
-            
+
         }
- 
+
         //config.SetProperty(appIdentifierKey, appIdentifier);
- 
+
         if (_testDevice == TestDevice.iOS)
         {
             var appIdentifierKey10 = "iOSAppName";
             // Note: a release build has to be done and the path to this .exe file should exist. Tweak this path if necessary
             var appIdentifier10 = "com.companyname.synacfusioncontrols";
- 
+
             config.SetProperty(appIdentifierKey10, appIdentifier10);
             // Note: this is passed down from the GitHub Action. If nothing is set, fall back to a default value below
             if (!string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("SIMID")))
@@ -88,7 +89,7 @@ public abstract class BaseTest : UITestBase
 
         return config;
     }
-   
+
 
     public void reportpath()
     {
@@ -132,7 +133,10 @@ public abstract class BaseTest : UITestBase
         App.Tap(filename);
         App.Tap(filename1);
     }
-
+    public void coordinates()
+    {
+        App.AddPoint("Item1", 391f, 505f);
+    }
     public void iTwoTap(string filename, string filename1)
     {
         App.Tap(filename);
@@ -164,7 +168,7 @@ public abstract class BaseTest : UITestBase
         App.DismissKeyboard();
 #endif
         Thread.Sleep(1500);
-       TakeAndCompareScreenshot(imgName);
+        TakeAndCompareScreenshot(imgName);
     }
 
     public void pick(string filename, string filename1)
@@ -196,7 +200,7 @@ public abstract class BaseTest : UITestBase
 #endif
     }
 
-    public void EnterText(string element, string text )
+    public void EnterText(string element, string text)
     {
 #if ANDROID || WINDOWS || MACOS
         App.EnterText(element, text);

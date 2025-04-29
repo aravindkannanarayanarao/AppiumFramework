@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Interactions.Internal;
 using Syncfusion.UITestHelpers.Appium;
 using Syncfusion.UITestHelpers.Core;
 
@@ -37,8 +38,9 @@ namespace UITests.Shared
             App.Tap("combo");
             App.WaitForElement("combo");
             var element = App.GetNativePageSource();
-            Console.WriteLine(element);
-            App.SelectFromComboBox("combo","Facebook");
+            coordinates();
+            App.TapByPointer("Item1");
+            App.SelectFromComboBox("combo", 391f, 505f);
             TakeAndCompareScreenshot("combobox");
         }
         [Test]
