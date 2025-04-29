@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- NuGet -->
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<AssemblyTitle>Syncfusion.UITestHelpers.Screenshot</AssemblyTitle>
+		<Configurations>Release-Xml;Debug;Release</Configurations>
+		<IsPackable>True</IsPackable>
+		<Platforms>AnyCPU</Platforms>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<Company>Syncfusion Inc</Company>
+		<Authors>Syncfusion Inc.</Authors>
+		<Copyright>Copyright @ Syncfusion® Inc 2024</Copyright>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageProjectUrl>https://www.syncfusion.com/?utm_source=nuget&amp;amp;utm_medium=listing</PackageProjectUrl>
+		<Description>Syncfusion® UITestHelpers Screenshot.</Description>
+		<DebugType>portable</DebugType>
+		<PackageTags>syncfusion;maui;ios;android;maccatalyst;dotnet-maui</PackageTags>
+		<RootNamespace>Syncfusion.UITestHelpers.Screenshot</RootNamespace>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="NUnit" Version="4.1.0" />
+		<PackageReference Include="NUnit.Console" Version="3.19.2" />
+		<PackageReference Include="NUnit.ConsoleRunner" Version="3.19.2" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="VisualTestUtils" Version="0.9.46-beta" />
+		<PackageReference Include="VisualTestUtils.MagickNet" Version="0.9.46-beta" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Appium\Syncfusion.UITestHelpers.Appium.csproj" />
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj" />
+	</ItemGroup>
+
+
+	<!-- Package additions -->
+
+</Project>

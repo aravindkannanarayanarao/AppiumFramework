@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Synacfusioncontrols.gridEntries"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             Title="gridEntries">
+    <Grid RowDefinitions="*,*,*,*,*,*,*,*,*">
+        <inputs:SfNumericEntry SemanticProperties.Description="entry" />
+        <inputs:SfAutocomplete  SemanticProperties.Description="Autocomplete" Grid.Row="1"/>
+        <inputs:SfMaskedEntry  SemanticProperties.Description="Masked" Grid.Row="2"/>
+        <inputs:SfComboBox  SemanticProperties.Description="Combo" Grid.Row="3"/>
+        <core:SfTextInputLayout  SemanticProperties.Description="TIL" Grid.Row="4"/>
+        <inputs:SfNumericEntry AutomationId="Autoentry" Grid.Row="5"/>
+        <inputs:SfAutocomplete  AutomationId="AutoAutocomplete" Grid.Row="6"/>
+        <inputs:SfMaskedEntry  AutomationId="AutMasked" Grid.Row="7"/>
+        <inputs:SfComboBox  AutomationId="AutoCombo" Grid.Row="8"/>
+        <core:SfTextInputLayout  AutomationId="AutoTIL" Grid.Row="9"/>
+    </Grid>
+    <!--<Label Text="AutomationId"/>
+    <Grid AutomationProperties.IsInAccessibleTree="True">
+        <inputs:SfNumericEntry AutomationId="Autoentry" />
+        <inputs:SfAutocomplete  AutomationId="AutoAutocomplete"/>
+        <inputs:SfMaskedEntry  AutomationId="AutMasked"/>
+        <inputs:SfComboBox  AutomationId="AutoCombo"/>
+        <core:SfTextInputLayout  AutomationId="AutoTIL"/>
+    </Grid>
+    <Button Text="Grid" Clicked="Button_Clicked"/>
+    </Grid>-->
+</ContentPage>

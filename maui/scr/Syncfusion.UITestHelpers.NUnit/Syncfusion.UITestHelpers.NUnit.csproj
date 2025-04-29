@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+      <!-- NuGet -->
+	  <SingleProject>true</SingleProject>
+	  <AssemblyName>Syncfusion.UITestHelpers.NUnit</AssemblyName>
+	  <AssemblyTitle>Syncfusion.UITestHelpers.NUnit</AssemblyTitle>
+	  <Configurations>Release-Xml;Debug;Release</Configurations>
+	  <IsPackable>True</IsPackable>
+	  <Platforms>AnyCPU</Platforms>
+	  <Version>1.0.0</Version>
+	  <AssemblyVersion>1.0.0</AssemblyVersion>
+	  <FileVersion>1.0.0</FileVersion>
+	  <Company>Syncfusion Inc</Company>
+	  <Authors>Syncfusion Inc.</Authors>
+	  <Copyright>Copyright @ Syncfusion® Inc 2024</Copyright>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <PackageProjectUrl>https://www.syncfusion.com/?utm_source=nuget&amp;amp;utm_medium=listing</PackageProjectUrl>
+	  <Description>Syncfusion® UITestHelpers NUnit.</Description>
+	  <DebugType>portable</DebugType>
+	  <PackageTags>syncfusion;maui;ios;android;maccatalyst;dotnet-maui</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit.Console" Version="3.19.2" />
+    <PackageReference Include="NUnit.ConsoleRunner" Version="3.19.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Package additions -->
+
+</Project>

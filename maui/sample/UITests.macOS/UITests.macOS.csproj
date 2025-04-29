@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsTestProject>true</IsTestProject>
+		<RootNamespace>UITests</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DefineConstants>$(DefineConstants);MACOS</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Appium.WebDriver" Version="5.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+		<PackageReference Include="NUnit" Version="4.1.0" />
+		<PackageReference Include="NUnit.Console" Version="3.19.2" />
+		<PackageReference Include="NUnit.ConsoleRunner" Version="3.19.2" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="VisualTestUtils" Version="0.9.46-beta" />
+		<PackageReference Include="VisualTestUtils.MagickNet" Version="0.9.46-beta" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\UITests.Shared\**\*.cs" LinkBase="Shared" Visible="false" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Appium\Syncfusion.UITestHelpers.Appium.csproj" />
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj" />
+	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj" />
+	</ItemGroup>
+
+</Project>

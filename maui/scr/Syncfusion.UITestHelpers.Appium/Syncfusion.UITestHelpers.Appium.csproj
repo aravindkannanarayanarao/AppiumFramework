@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- NuGet -->
+	  <AssemblyName>Syncfusion.UITestHelpers.Appium</AssemblyName>
+	  <AssemblyTitle>Syncfusion.UITestHelpers.Appium</AssemblyTitle>
+	  <Configurations>Release-Xml;Debug;Release</Configurations>
+	  <IsPackable>True</IsPackable>
+	  <Platforms>AnyCPU</Platforms>
+	  <Version>1.0.0</Version>
+	  <AssemblyVersion>1.0.0</AssemblyVersion>
+	  <FileVersion>1.0.0</FileVersion>
+	  <Company>Syncfusion Inc</Company>
+	  <Authors>Syncfusion Inc.</Authors>
+	  <Copyright>Copyright @ Syncfusion® Inc 2024</Copyright>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <PackageProjectUrl>https://www.syncfusion.com/?utm_source=nuget&amp;amp;utm_medium=listing</PackageProjectUrl>
+	  <Description>Syncfusion® UITestHelpers Appium.</Description>
+	  <DebugType>portable</DebugType>
+	  <PackageTags>syncfusion;maui;ios;android;maccatalyst;dotnet-maui</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Appium.WebDriver" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
+    <ProjectReference Include="..\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj" />
+  </ItemGroup>
+
+  <!-- Package additions -->
+
+</Project>

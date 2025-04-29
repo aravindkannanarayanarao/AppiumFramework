@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+	<!-- NuGet -->
+	<SingleProject>true</SingleProject>
+	  <AssemblyName>Syncfusion.UITestHelpers.Core</AssemblyName>
+	  <AssemblyTitle>Syncfusion.UITestHelpers.Core</AssemblyTitle>
+	  <Configurations>Debug;Release;Release-Xml</Configurations>
+	  <IsPackable>True</IsPackable>
+	  <Platforms>AnyCPU</Platforms>
+	  <Version>1.0.0</Version>
+	  <AssemblyVersion>1.0.0</AssemblyVersion>
+	  <FileVersion>1.0.0</FileVersion>
+	  <Company>Syncfusion Inc</Company>
+	  <Authors>Syncfusion Inc.</Authors>
+	  <Copyright>Copyright @ Syncfusion® Inc 2024</Copyright>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <PackageProjectUrl>https://www.syncfusion.com/?utm_source=nuget&amp;amp;utm_medium=listing</PackageProjectUrl>
+	  <Description>Syncfusion® UITestHelpers Core.</Description>
+	  <DebugType>portable</DebugType>
+	  <PackageTags>syncfusion;maui;ios;android;maccatalyst;dotnet-maui</PackageTags>
+  </PropertyGroup>
+
+  <!-- Package additions -->
+
+</Project>
