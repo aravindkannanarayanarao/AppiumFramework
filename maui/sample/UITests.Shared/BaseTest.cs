@@ -37,7 +37,7 @@ public abstract class BaseTest : UITestBase
         // Note: an app with this ID has to be deployed to the emulator/device you want to run it on
         var appIdentifier = "com.companyname.synacfusioncontrols";
         var AppMain1 = "AppMain";
-        var AppMain12 = "crc6437ffccb2e53355dc";
+        var AppMain12 = "crc64ea26cc18b9cc2ea1";
 
         config.SetProperty(appIdentifierKey, appIdentifier);
         config.SetProperty(AppMain1, AppMain12);

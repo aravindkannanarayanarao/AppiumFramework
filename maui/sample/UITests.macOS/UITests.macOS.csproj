@@ -28,10 +28,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Appium\Syncfusion.UITestHelpers.Appium.csproj" />
-	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
-	  <ProjectReference Include="..\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj" />
-	  <ProjectReference Include="..\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj" />
+		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.Appium\Syncfusion.UITestHelpers.Appium.csproj" />
+		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
+		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj" />
+		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj" />
 	</ItemGroup>
 
 </Project>

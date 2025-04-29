@@ -4,7 +4,5 @@
              xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              x:Class="Synacfusioncontrols.numeric"
              Title="numeric">
-    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <inputs:SfNumericEntry SemanticProperties.Description="entry" AutomationId="entry" />
-    </StackLayout>
+    <inputs:SfNumericEntry x:Uid="entry" x:Name="entry" SemanticProperties.Description="entry" AutomationId="entry" />
 </ContentPage>

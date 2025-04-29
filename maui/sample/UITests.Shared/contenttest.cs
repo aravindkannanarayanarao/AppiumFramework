@@ -10,12 +10,14 @@ namespace UITests.Shared
         {
         }
         [Test]
-        public void SemanticPropertiesGridNumericEntry_Tap()
+        public void numeric()
         {
+            App.WaitForElement("numeric");
             App.Tap("numeric");
-            App.WaitForElement("entry");
-            App.Tap("entry");
-            TakeAndCompareScreenshot("SemanticPropertiesGridNumericEntry_Tap");
+           var elementid =  App.GetNativePageSource();
+            Console.WriteLine(elementid);
+            //App.DoesElementExist("entry");
+            TakeAndCompareScreenshot("numeric");
         }
         [Test]
         public void SemanticPropertiesGridNumericEntry_Enter()

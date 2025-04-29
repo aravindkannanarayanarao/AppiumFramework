@@ -6,7 +6,7 @@
              x:Class="Synacfusioncontrols.MainPage">
 
     <StackLayout AutomationProperties.IsInAccessibleTree="True">
-        <Label Text="SematicProperties"/>
+        <!--<Label Text="SematicProperties"/>
         <VerticalStackLayout AutomationProperties.IsInAccessibleTree="True">
             <inputs:SfNumericEntry SemanticProperties.Description="entry" />
             <inputs:SfAutocomplete  SemanticProperties.Description="Autocomplete"/>
@@ -21,7 +21,7 @@
             <inputs:SfMaskedEntry  AutomationId="AutMasked"/>
             <inputs:SfComboBox  AutomationId="AutoCombo"/>
             <core:SfTextInputLayout  AutomationId="AutoTIL"/>
-        </VerticalStackLayout>
+        </VerticalStackLayout>-->
         <Button Text="Grid" AutomationId="btngrid" Clicked="Button_Clicked"/>
         <Button Text="Numeric" AutomationId="numeric" Clicked="numericButton_Clicked"/>
         <Button Text="Masked" AutomationId="mask" Clicked="maskButton_Clicked"/>

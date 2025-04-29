@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.NUnit", "..\scr\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj", "{1AEED87B-D3DB-4FDA-A009-A7A59F1997C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.Screenshot", "..\scr\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj", "{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.Screenshot", "..\scr\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj", "{5A262002-190C-4855-8F8E-13F32B3B6418}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,12 +87,12 @@ Global
 		{1AEED87B-D3DB-4FDA-A009-A7A59F1997C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1AEED87B-D3DB-4FDA-A009-A7A59F1997C9}.Release-Xml|Any CPU.ActiveCfg = Release-Xml|Any CPU
 		{1AEED87B-D3DB-4FDA-A009-A7A59F1997C9}.Release-Xml|Any CPU.Build.0 = Release-Xml|Any CPU
-		{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}.Release-Xml|Any CPU.ActiveCfg = Release-Xml|Any CPU
-		{01E9BAFE-0888-48FB-A74C-C5FD390EF8B1}.Release-Xml|Any CPU.Build.0 = Release-Xml|Any CPU
+		{5A262002-190C-4855-8F8E-13F32B3B6418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A262002-190C-4855-8F8E-13F32B3B6418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A262002-190C-4855-8F8E-13F32B3B6418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A262002-190C-4855-8F8E-13F32B3B6418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A262002-190C-4855-8F8E-13F32B3B6418}.Release-Xml|Any CPU.ActiveCfg = Release-Xml|Any CPU
+		{5A262002-190C-4855-8F8E-13F32B3B6418}.Release-Xml|Any CPU.Build.0 = Release-Xml|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
