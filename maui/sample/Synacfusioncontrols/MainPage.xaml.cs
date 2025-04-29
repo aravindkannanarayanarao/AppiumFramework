@@ -21,8 +21,17 @@
 
         private void maskButton_Clicked(object sender, EventArgs e)
         {
-
             Navigation.PushAsync(new mask());
+        }
+
+        private void comboButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new combobox());
+        }
+
+        private void autoButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new autocomplete());
         }
     }
 

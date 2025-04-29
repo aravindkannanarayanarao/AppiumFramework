@@ -387,6 +387,92 @@ namespace Syncfusion.UITestHelpers.Appium
         }
 
         /// <summary>
+        /// Enters text into a custom input control (e.g., Syncfusion SfNumericTextBox) by locating 
+        /// the associated editable field (EditText) nested inside a parent container identified 
+        /// by its accessibility ID (content-desc).
+        /// </summary>
+        /// <param name="accessibilityId">The accessibility ID (SemanticProperties.Description) of the parent container view.</param>
+        /// <param name="value">The text value to enter into the EditText field.</param>
+        /// <exception cref="NoSuchElementException">Thrown if the container or EditText element is not found.</exception>
+        /// <exception cref="InvalidElementStateException">Thrown if the target element cannot accept input.</exception>
+        /// <exception cref="InvalidElementStateException">Cannot set the element to 'T'. Did you interact with the correct element?.</exception>
+        public static void EnterTextIntoCustomField(this IApp app, string accessibilityId, string value)
+        {
+            try
+            {
+                var driver = (app as AppiumApp)?.Driver;
+                var container = driver.FindElement(MobileBy.AccessibilityId(accessibilityId));
+                var input = container.FindElement(By.ClassName("android.widget.EditText"));
+                input.Clear();
+                input.SendKeys(value);
+            }
+            catch (Exception ex)
+            {
+                LogException("EnterText", ex);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Selects a specified item from a ComboBox control by first tapping the dropdown button
+        /// and then choosing the desired value from the displayed list.
+        /// </summary>
+        /// <param name="accessibilityId">The accessibility ID of the ComboBox container.</param>
+        /// <param name="valueToSelect">The visible text of the item to select from the dropdown list.</param>
+
+        public static void SelectFromComboBox(this IApp app, string accessibilityId, string valueToSelect)
+        {
+            try
+            {
+                var driver = (app as AppiumApp)?.Driver;
+                var comboContainer = driver.FindElement(MobileBy.AccessibilityId(accessibilityId));
+
+                // Tap the dropdown button (usually a sibling of EditText)
+                var dropdownButton = comboContainer.FindElement(By.XPath(".//*[contains(@content-desc, 'Drop down')]"));
+                dropdownButton.Click();
+
+                // Wait for list to appear and select the value
+                var listItem = driver.FindElement(MobileBy.AndroidUIAutomator(
+                    $"new UiSelector().text(\"{valueToSelect}\")"));
+                listItem.Click();
+            }
+            catch (Exception ex)
+            {
+                LogException("EnterText", ex);
+                throw;
+            }
+        }
+        /// <summary>
+        /// Types into an AutoComplete input field and selects the matching suggestion from the dropdown list.
+        /// Useful for controls that display suggestions dynamically based on typed text.
+        /// </summary>
+        /// <param name="accessibilityId">The accessibility ID of the AutoComplete input field.</param>
+        /// <param name="valueToType">The partial or full text to type into the input field to trigger suggestions.</param>
+        /// <param name="valueToSelect">The visible text of the suggestion to select from the dropdown list.</param>
+        public static void SelectFromAutoComplete(this IApp app, string accessibilityId, string valueToType, string valueToSelect)
+        {
+            try
+            {
+                var driver = (app as AppiumApp)?.Driver;
+                var input = driver.FindElement(MobileBy.AccessibilityId(accessibilityId));
+                input.Clear();
+                input.SendKeys(valueToType);
+
+                // Wait for suggestion dropdown and tap the correct item
+                var suggestion = driver.FindElement(MobileBy.AndroidUIAutomator(
+                    $"new UiSelector().text(\"{valueToSelect}\")"));
+                suggestion.Click();
+            }
+            catch (Exception ex)
+            {
+                LogException("EnterText", ex);
+                throw;
+            }
+        }
+
+
+
+        /// <summary>
         /// Enters text into the element identified by the query.
         /// </summary>
         /// <param name="app">Represents the main gateway to interact with an app.</param>
@@ -1086,7 +1172,7 @@ namespace Syncfusion.UITestHelpers.Appium
 
                 stopwatch.Stop();
                 throw new NotFoundException($"Element with ID '{elementToFind}' not visible within timeout.");
-            
+
             }
             catch (Exception ex)
             {

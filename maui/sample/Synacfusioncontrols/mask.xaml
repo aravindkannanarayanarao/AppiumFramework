@@ -5,6 +5,6 @@
              x:Class="Synacfusioncontrols.mask"
              Title="mask">
     <Grid>
-        <inputs:SfMaskedEntry  SemanticProperties.Description="Masked" AutomationId="Masked"/>
+        <inputs:SfMaskedEntry  SemanticProperties.Description="Masked" AutomationId="Masked" x:Name="Masked" x:Uid="Masked"/>
     </Grid>
 </ContentPage>

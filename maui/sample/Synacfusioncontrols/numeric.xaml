@@ -4,5 +4,11 @@
              xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              x:Class="Synacfusioncontrols.numeric"
              Title="numeric">
-    <inputs:SfNumericEntry x:Uid="entry" x:Name="entry" SemanticProperties.Description="entry" AutomationId="entry" />
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowDefinitions="*,*,*,*,*">
+        <inputs:SfNumericEntry Grid.Row="0" x:Uid="entry" x:Name="entry" SemanticProperties.Description="entry" AutomationId="entry" IsEditable="True"  />
+        <inputs:SfNumericEntry Grid.Row="1" x:Uid="entry1" x:Name="entry1" SemanticProperties.Description="entry1" AutomationId="entry1" IsEditable="True"  />
+        <inputs:SfNumericEntry Grid.Row="2" x:Uid="entry2" x:Name="entry2" SemanticProperties.Description="entry2" AutomationId="entry2" IsEditable="True"  />
+        <inputs:SfNumericEntry Grid.Row="3" x:Uid="entry3" x:Name="entry3" SemanticProperties.Description="entry3" AutomationId="entry3" IsEditable="True"  />
+        <inputs:SfNumericEntry Grid.Row="4" x:Uid="entry4" x:Name="entry4" SemanticProperties.Description="entry4" AutomationId="entry4" IsEditable="True"  />
+    </Grid>
 </ContentPage>

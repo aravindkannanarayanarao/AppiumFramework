@@ -25,5 +25,7 @@
         <Button Text="Grid" AutomationId="btngrid" Clicked="Button_Clicked"/>
         <Button Text="Numeric" AutomationId="numeric" Clicked="numericButton_Clicked"/>
         <Button Text="Masked" AutomationId="mask" Clicked="maskButton_Clicked"/>
+        <Button Text="ComboBox" AutomationId="combo" Clicked="comboButton_Clicked"/>
+        <Button Text="AutoComplete" AutomationId="auto" Clicked="autoButton_Clicked"/>
     </StackLayout>
 </ContentPage>

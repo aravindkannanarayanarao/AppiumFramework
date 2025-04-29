@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:local="clr-namespace:Synacfusioncontrols"
+             x:Class="Synacfusioncontrols.combobox"
+             Title="combobox">
+    <ContentPage.BindingContext>
+        <local:SocialMediaViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <inputs:SfComboBox x:Name="combo"
+                           x:Uid="combo" 
+                           SemanticProperties.Description="combo"
+                           AutomationId="combo"
+                           WidthRequest="250"
+                        DisplayMemberPath = "Name"
+                        TextMemberPath = "Name"
+                           HeightRequest="50"
+                           ItemsSource="{Binding SocialMedias}"/>
+    </StackLayout>
+</ContentPage>

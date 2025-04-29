@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Synacfusioncontrols.autocomplete"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:local="clr-namespace:Synacfusioncontrols"
+             Title="autocomplete">
+    <ContentPage.BindingContext>
+        <local:SocialMediaViewModel1 />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <editors:SfAutocomplete x:Name="autocomplete1" x:Uid="autocomplete1" 
+                        DisplayMemberPath = "Name"
+                        TextMemberPath = "Name" AutomationId="autocomplete1" SemanticProperties.Description="autocomplete1" />
+    </StackLayout>
+</ContentPage>

@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
 using Syncfusion.UITestHelpers.Appium;
 using Syncfusion.UITestHelpers.Core;
 
@@ -14,37 +16,43 @@ namespace UITests.Shared
         {
             App.WaitForElement("numeric");
             App.Tap("numeric");
-           var elementid =  App.GetNativePageSource();
-            Console.WriteLine(elementid);
-            //App.DoesElementExist("entry");
+            App.WaitForElement("entry");
+            var element = App.GetNativePageSource();
+            Console.WriteLine(element);
+            App.EnterTextIntoCustomField("entry1", "67");
             TakeAndCompareScreenshot("numeric");
         }
         [Test]
-        public void SemanticPropertiesGridNumericEntry_Enter()
+        public void masked()
         {
-            App.Tap("numeric");
-            App.WaitForElement("entry");
+            App.Tap("mask");
+            App.WaitForElement("mask");
             App.Tap("entry");
-            App.EnterText("entry", "21");
-            TakeAndCompareScreenshot("SemanticPropertiesGridNumericEntry_Enter");
+            App.EnterTextIntoCustomField("Masked", "21");
+            TakeAndCompareScreenshot("masked");
+        }
+        [Test]
+        public void combobox()
+        {
+            App.Tap("combo");
+            App.WaitForElement("combo");
+            var element = App.GetNativePageSource();
+            Console.WriteLine(element);
+            App.SelectFromComboBox("combo","Facebook");
+            TakeAndCompareScreenshot("combobox");
+        }
+        [Test]
+        public void autocomplete()
+        {
+            App.Tap("auto");
+            App.WaitForElement("autocomplete1");
+            var element = App.GetNativePageSource();
+            Console.WriteLine(element);
+            App.Tap("autocomplete1");
+            App.EnterTextIntoCustomField("autocomplete1", "fa");
+            App.Tap("Facebook");
+            TakeAndCompareScreenshot("autocomplete");
         }
 
-        [Test]
-        public void SemanticPropertiesGridMaskedEdit_Tap()
-        {
-            App.Tap("mask");
-            App.WaitForElement("Masked");
-            App.Tap("Masked");
-            TakeAndCompareScreenshot("SemanticPropertiesGridMaskedEdit_Tap");
-        }
-        [Test]
-        public void SemanticPropertiesGridMaskedEdit_Enter()
-        {
-            App.Tap("mask");
-            App.WaitForElement("Masked");
-            App.Tap("Masked");
-            App.EnterText("Masked", "21");
-            TakeAndCompareScreenshot("SemanticPropertiesGridMaskedEdit_Enter");
-        }
     }
 }
