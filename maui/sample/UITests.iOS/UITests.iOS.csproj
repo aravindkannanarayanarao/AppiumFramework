@@ -19,19 +19,16 @@
 		<PackageReference Include="NUnit.Console" Version="3.19.2" />
 		<PackageReference Include="NUnit.ConsoleRunner" Version="3.19.2" />
 		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="Syncfusion.UITestHelpers.Appium" Version="1.0.0" />
+		<PackageReference Include="Syncfusion.UITestHelpers.Core" Version="1.0.0" />
+		<PackageReference Include="Syncfusion.UITestHelpers.NUnit" Version="1.0.0" />
+		<PackageReference Include="Syncfusion.UITestHelpers.Screenshot" Version="1.0.0" />
 		<PackageReference Include="VisualTestUtils" Version="0.9.46-beta" />
 		<PackageReference Include="VisualTestUtils.MagickNet" Version="0.9.46-beta" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Include="..\UITests.Shared\**\*.cs" LinkBase="Shared" Visible="false" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.Appium\Syncfusion.UITestHelpers.Appium.csproj" />
-		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj" />
-		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj" />
-		<ProjectReference Include="..\..\scr\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj" />
 	</ItemGroup>
 
 </Project>

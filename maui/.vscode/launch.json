@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+        "configurations": [
+          {
+            "type": "coreclr",
+            "request": "launch",
+            "name": "Generate NuGet Packages",
+            "program": "dotnet",
+            "args": [
+              "pack",
+              "${workspaceFolder}/src/Syncfusion.UITestHelpers.sln",
+              "--configuration",
+              "Release",
+              "--output",
+              "${workspaceFolder}/build/nuget-packages"
+            ],
+            "preLaunchTask": "build-solution"
+          }
+        ]
+        
+}

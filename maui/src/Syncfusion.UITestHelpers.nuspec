@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Syncfusion.UITestHelpers</id>
+    <version>1.0.0</version>
+    <title>Syncfusion .NET MAUI controls Appium framework</title>
+    <authors>Syncfusion Inc.</authors>
+    <owners>Syncfusion Inc.</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A collection of UI test helpers for various frameworks.</description>
+    <tags>UI Test Helpers Appium Core NUnit Screenshot for Appium MAUI Automation</tags>
+  </metadata>
+  <files>
+    <file src="Syncfusion.UITestHelpers.Appium/bin/Release/net9.0/Syncfusion.UITestHelpers.Appium.dll" target="lib/.net9.0/" />
+    <file src="Syncfusion.UITestHelpers.Core/bin/Release/net9.0/Syncfusion.UITestHelpers.Core.dll" target="lib/.net9.0/" />
+    <file src="Syncfusion.UITestHelpers.NUnit/bin/Release/net9.0/Syncfusion.UITestHelpers.NUnit.dll" target="lib/.net9.0/" />
+    <file src="Syncfusion.UITestHelpers.Screenshot/bin/Release/net9.0/Syncfusion.UITestHelpers.Screenshot.dll" target="lib/.net9.0/" />
+  </files>
+</package>

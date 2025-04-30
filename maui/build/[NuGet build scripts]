@@ -1,0 +1,12 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Pack" AfterTargets="Build">
+    <ItemGroup>
+      <NuGetPackage Include="@(ProjectReference)" />
+    </ItemGroup>
+    
+    <Exec Command="dotnet pack src/Syncfusion.UITestHelpers.Appium/Syncfusion.UITestHelpers.Appium.csproj -c Release -o $(OutputPath)" />
+    <Exec Command="dotnet pack src/Syncfusion.UITestHelpers.Core/Syncfusion.UITestHelpers.Core.csproj -c Release -o $(OutputPath)" />
+    <Exec Command="dotnet pack src/Syncfusion.UITestHelpers.NUnit/Syncfusion.UITestHelpers.NUnit.csproj -c Release -o $(OutputPath)" />
+    <Exec Command="dotnet pack src/Syncfusion.UITestHelpers.Screenshot/Syncfusion.UITestHelpers.Screenshot.csproj -c Release -o $(OutputPath)" />
+  </Target>
+</Project>

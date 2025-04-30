@@ -15,14 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITests.macOS", "UITests.ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synacfusioncontrols", "Synacfusioncontrols\Synacfusioncontrols.csproj", "{CBDEA91A-174F-4618-9AE7-6CB29A23B3C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.Appium", "..\scr\Syncfusion.UITestHelpers.Appium\Syncfusion.UITestHelpers.Appium.csproj", "{604FCCAD-5DE9-43F8-954E-FA1BEDB17D0E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.Core", "..\scr\Syncfusion.UITestHelpers.Core\Syncfusion.UITestHelpers.Core.csproj", "{DD046B14-7CE1-4A21-A4CD-BC8C0210C432}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.NUnit", "..\scr\Syncfusion.UITestHelpers.NUnit\Syncfusion.UITestHelpers.NUnit.csproj", "{1AEED87B-D3DB-4FDA-A009-A7A59F1997C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.UITestHelpers.Screenshot", "..\scr\Syncfusion.UITestHelpers.Screenshot\Syncfusion.UITestHelpers.Screenshot.csproj", "{5A262002-190C-4855-8F8E-13F32B3B6418}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

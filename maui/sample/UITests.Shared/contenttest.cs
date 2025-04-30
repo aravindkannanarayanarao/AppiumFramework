@@ -18,9 +18,17 @@ namespace UITests.Shared
             App.WaitForElement("numeric");
             App.Tap("numeric");
             App.WaitForElement("entry");
+#if ANDROID
             var element = App.GetNativePageSource();
             Console.WriteLine(element);
             App.EnterTextIntoCustomField("entry1", "67");
+#elif WINDOWS
+            App.EnterText("entry1", "67");
+#elif IOS
+
+#elif MACOS
+
+#endif
             TakeAndCompareScreenshot("numeric");
         }
         [Test]
